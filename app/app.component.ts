@@ -5,9 +5,10 @@ import { Component, OnInit}     from '@angular/core';
     template: `
       <h1>{{title}}</h1>
       <nav>
-        <a routerLink="/heroes">Heroes</a>
-        <a routerLink="/dashboard">Dashboard</a>
+            <a routerLink="/heroes">Heroes</a>
+        <a routerlink="/dashboard">Dashboard</a>
       </nav>
+
       <router-outlet></router-outlet>
       `
 })

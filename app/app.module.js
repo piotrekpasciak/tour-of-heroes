@@ -25,25 +25,7 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                router_1.RouterModule.forRoot([
-                    {
-                        path: '',
-                        redirectTo: '/dashboard',
-                        pathMatch: 'full'
-                    },
-                    {
-                        path: 'heroes',
-                        component: heroes_component_1.HeroesComponent
-                    },
-                    {
-                        path: 'dashboard',
-                        component: dashboard_component_1.DashboardComponent
-                    },
-                    {
-                        path: 'detail/:id',
-                        component: hero_detail_component_1.HeroDetailComponent
-                    }
-                ])
+                router_1.RouterModule.forRoot([])
             ],
             declarations: [
                 app_component_1.AppComponent,
