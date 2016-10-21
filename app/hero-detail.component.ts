@@ -6,6 +6,7 @@ import { HeroService }      from './hero.service';
 import { Hero }             from './hero';
 
 @Component({
+    moduleId: module.id,
     selector: 'my-hero-detail',
     template: `
     <div *ngIf="hero">
@@ -16,8 +17,10 @@ import { Hero }             from './hero';
         <input [(ngModel)]="hero.name" placeholder="name"/>
       </div>
     </div>
+    <button (click)="save()">Save</button>
     <button (click)="goBack()">Back</button>
-  `
+    `,
+    styleUrls: [ 'hero-detail.component.css' ]
 })
 export class HeroDetailComponent implements OnInit {
     @Input() hero: Hero;
@@ -30,7 +33,7 @@ export class HeroDetailComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
-            let id = params['id'];
+            let id = +params['id'];
             this.heroService.getHero(id)
                 .then(hero => this.hero = hero);
         });
@@ -38,5 +41,9 @@ export class HeroDetailComponent implements OnInit {
 
     goBack(): void {
         this.location.back();
+    }
+
+    save(): void {
+        console.log("Save function TODO:")
     }
 }
