@@ -31,7 +31,9 @@ var HeroDetailComponent = (function () {
         this.location.back();
     };
     HeroDetailComponent.prototype.save = function () {
-        console.log("Save function TODO:");
+        var _this = this;
+        this.heroService.update(this.hero)
+            .then(function () { return _this.goBack(); });
     };
     __decorate([
         core_1.Input(), 
